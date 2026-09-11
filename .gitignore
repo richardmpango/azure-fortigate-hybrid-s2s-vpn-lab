@@ -1,0 +1,14 @@
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Secrets / exported configs
+*.key
+*.pem
+*.pfx
+*.psk
+.env
+secrets/
+private/

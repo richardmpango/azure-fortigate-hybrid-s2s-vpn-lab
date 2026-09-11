@@ -1,0 +1,24 @@
+flowchart LR
+  subgraph ONPREM[On-Premises / Home Lab - 192.168.5.0/24]
+    FG[FortiGate 60D
+WAN1 / IPsec endpoint]
+    LAN[LAN services
+AD/DNS • TrueNAS • Nginx • Monitoring]
+    FG --- LAN
+  end
+
+  INTERNET((Internet))
+
+  subgraph AZURE[Microsoft Azure - otix_VNET 172.16.0.0/16]
+    GW[Azure VPN Gateway
+VpnGw1AZ • Route-based]
+    GWS[GatewaySubnet
+172.16.0.0/27]
+    SRV[SERVERS_SUBNET
+172.16.1.0/24
+WS-DC-001]
+    GW --- GWS --- SRV
+  end
+
+  FG <-->|IPsec S2S / IKEv2| INTERNET
+  INTERNET <-->|Encrypted tunnel| GW
