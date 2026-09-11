@@ -3,7 +3,7 @@
 A hands-on hybrid networking project that connects an on-premises FortiGate 60D environment to Microsoft Azure using a route-based IPsec Site-to-Site VPN.
 
 ![Architecture](assets/architecture/hybrid-azure-fortigate-s2s-architecture.png)
-
+![Azure VPN Gateway](assets/screenshots/azure_s2s _to_local_Otix_Lab.png)
 ## Project goals
 
 - Build secure connectivity between an on-premises network and an Azure VNet.
